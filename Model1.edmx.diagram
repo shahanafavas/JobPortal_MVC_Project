@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b8b19450cdff4dbf8d136b867cc2c85c" Name="Diagram1">
+        <EntityTypeShape EntityType="MVC_Project_LaModel.Application_Tab" Width="1.5" PointX="5.25" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVC_Project_LaModel.CompanyReg" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVC_Project_LaModel.EmployeeReg" Width="1.5" PointX="3" PointY="2.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVC_Project_LaModel.JobTab" Width="1.5" PointX="3" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="MVC_Project_LaModel.LoginTab" Width="1.5" PointX="5.75" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="MVC_Project_LaModel.FK_Application_Tab_CompanyReg" ManuallyRouted="false" />
+        <AssociationConnector Association="MVC_Project_LaModel.FK_Application_Tab_EmployeeReg" ManuallyRouted="false" />
+        <AssociationConnector Association="MVC_Project_LaModel.FK_Application_Tab_JobTab" ManuallyRouted="false" />
+        <AssociationConnector Association="MVC_Project_LaModel.FK_JobTab_CompanyReg" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

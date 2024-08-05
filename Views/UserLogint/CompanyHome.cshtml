@@ -1,0 +1,46 @@
+﻿@model Project_MVC.Models.JobAdd
+@{
+    ViewBag.Title = "CompanyHome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CompanyHome</h2>
+
+
+<div>
+    @using (Html.BeginForm("JobInsert_click", "Company", FormMethod.Post))
+    {
+        <div>
+            <label>Job Title:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.jobtitle)
+
+        </div>
+        <div>
+            <label>Vacancies:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.vacancies)
+
+        </div>
+        <div>
+            <label>Salary:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.salary)
+
+        </div>
+        <div>
+            <label>Status:</label>
+        </div>
+        <div>
+            @Html.TextBoxFor(m => m.status)
+
+        </div>
+        <div>
+            <input type="submit" value="Insert" />
+            @Html.DisplayFor(m => m.msg)
+        </div>
+    }
+</div>

@@ -1,0 +1,35 @@
+﻿@model List<Project_MVC.Models.DisplayAll>
+
+@{ ViewBag.Title = "Index";
+                Layout = "~/Views/Shared/_Layout.cshtml"; }
+
+<h1>Explore and Find Your Job Here</h1>
+<br />
+<br />
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Company Name</th>
+            <th>Job Title</th>
+            <th>Vacancies</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var job in Model)
+        {
+<tr>
+    <td>@job.Company_Name   </td>
+    <td>@job.JobTitle</td>
+    <td>@job.vacancies</td>
+    <td>@job.salary</td>
+</tr>}
+    </tbody>
+
+
+</table>
+
+<br />
+<h2> @Html.ActionLink("Apply Now", "job_click", "ApplyJob")</h2>

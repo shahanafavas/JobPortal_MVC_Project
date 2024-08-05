@@ -1,0 +1,96 @@
+﻿@model Project_MVC.Models.DisplayAll
+@{
+    ViewBag.Title = "DisplayAllJob_Load";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>All Jobs</h2>
+<br />
+<div>
+    @using (Html.BeginForm("SearchJob_Click","DisplayAllJob",FormMethod.Post))
+            {
+                <table>
+                    <tr>
+                        <td><label>Job Name</label></td>
+                        <td>@Html.TextBoxFor(m => m.insertse.Job_Title)</td>
+
+                        <td><label>Company Name</label></td>
+                        <td>@Html.TextBoxFor(m => m.insertse.companyname)</td>
+
+                        <td><label>Salary</label></td>
+                        <td>@Html.TextBoxFor(m => m.insertse.Salary)</td>
+
+
+                        <td><input type="submit" value="Search" /></td>
+                    </tr>
+                </table>
+            }
+</div>
+<br />
+<br />
+<div>
+    @using (Html.BeginForm("DisplayAllJob_Load","DisplayAllJob",FormMethod.Get))
+    {
+        if(Model !=null)
+        {
+            if(Model !=null && Model.selectjob.Count !=0)
+                    {
+                        <table class="table">
+                            <tr>
+                               
+                                <th>
+                                    @*@Html.DisplayNameFor(m => m.insertse.Job_Title)*@
+                                    Job Name
+                                </th>
+                              
+                                <th>
+                                    @*@Html.DisplayNameFor(m => m.vacancies)*@
+                                    Vacancy
+                                </th>
+                           
+                                <th>
+                                    @*@Html.DisplayNameFor(m => m.Company_Name)*@
+                                    Company Name
+                                </th>
+                               
+                                <th>
+                                    @*@Html.DisplayNameFor(m => m.salary)*@
+                                    Salary
+                                </th>
+
+                            </tr>
+                            @foreach(var item in Model.selectjob)
+                        {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.JobTitle)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.vacancies)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Company_Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.salary)
+                            </td>
+                           
+                            <td>
+                                @Html.ActionLink("Apply Now", "Index", "ApplyJob", new {cid=item.CId,jid=item.jobid},null)
+                            </td>
+                        </tr>
+                        }
+                        </table>
+                    }
+                    else
+                    {
+                        <script>
+                            alert('No matching jobs found');
+                        </script>
+                    }
+        }
+    }
+    <div>
+        @Html.ActionLink("Back To Home","DisplayAllJob_Load","DisplayAllJob")
+    </div>
+</div>
